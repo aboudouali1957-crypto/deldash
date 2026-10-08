@@ -42,6 +42,8 @@
                     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
                     const panel = document.getElementById('panel-' + targetPanelId);
                     if (panel) panel.classList.add('active');
+                    // Redraw maps that were created while their panel was hidden
+                    window.dispatchEvent(new Event('resize'));
                 });
             });
         },

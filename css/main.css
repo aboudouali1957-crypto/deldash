@@ -565,3 +565,11 @@ input, select, textarea {
     font-size: 0.75rem;
   }
 }
+
+/* Map container (shared by all dashboards) */
+.map-container {
+  height: 420px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}

@@ -22,9 +22,12 @@
     };
 
     function filterDailyStats(stats, days) {
-        const cutoff = new Date();
+        // Count back from the most recent date in the data (not from today),
+        // so the demo data always shows up
+        const lastDate = new Date(Math.max(...stats.map(s => new Date(s.date))));
+        const cutoff = new Date(lastDate);
         cutoff.setDate(cutoff.getDate() - days);
-        return stats.filter(s => new Date(s.date) >= cutoff);
+        return stats.filter(s => new Date(s.date) > cutoff);
     }
 
     function renderOrderVolumeChart(stats) {

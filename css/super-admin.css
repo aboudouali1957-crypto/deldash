@@ -7,8 +7,18 @@
   margin-top: var(--space-lg);
 }
 
+.chart-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
 .chart-card {
   min-height: 300px;
+}
+.chart-card canvas {
+  max-height: 260px;
 }
 .chart-card h3 {
   font-size: var(--font-size-sm);
